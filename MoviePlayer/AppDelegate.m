@@ -13,7 +13,15 @@
 @end
 
 @implementation AppDelegate
-
+//
+//-(UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+//    if (_isRotation) {
+//        return UIInterfaceOrientationMaskLandscape;
+//    }else {
+//        return UIInterfaceOrientationMaskPortrait;
+//    }
+//    
+//}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.

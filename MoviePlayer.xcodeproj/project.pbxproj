@@ -13,6 +13,17 @@
 		8B4D4B751D48513A00AFD689 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D4B731D48513A00AFD689 /* Main.storyboard */; };
 		8B4D4B771D48513A00AFD689 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D4B761D48513A00AFD689 /* Assets.xcassets */; };
 		8B4D4B7A1D48513A00AFD689 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D4B781D48513A00AFD689 /* LaunchScreen.storyboard */; };
+		8B4D4B841D4857E900AFD689 /* IMG_0054.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D4B831D4857E900AFD689 /* IMG_0054.MOV */; };
+		8B4D4B8B1D489C7300AFD689 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B4D4B8A1D489C7300AFD689 /* AVFoundation.framework */; };
+		8B4D4BB11D49B3C400AFD689 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D4BAD1D49B3C400AFD689 /* Assets.xcassets */; };
+		8BC98E981D4AF52400ED6D5F /* LJAVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC98E971D4AF52400ED6D5F /* LJAVPlayerViewController.m */; };
+		8BC98EAE1D4C44C800ED6D5F /* FileManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC98EA91D4C44C800ED6D5F /* FileManageViewController.m */; };
+		8BC98EAF1D4C44C800ED6D5F /* FileManageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BC98EAA1D4C44C800ED6D5F /* FileManageViewController.xib */; };
+		8BC98EB01D4C44C800ED6D5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC98EAD1D4C44C800ED6D5F /* Assets.xcassets */; };
+		8BC98EB31D4C452900ED6D5F /* FileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC98EB21D4C452900ED6D5F /* FileModel.m */; };
+		8BC98EBA1D4C470900ED6D5F /* FileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC98EB81D4C470900ED6D5F /* FileTableViewCell.m */; };
+		8BC98EBB1D4C470900ED6D5F /* FileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BC98EB91D4C470900ED6D5F /* FileTableViewCell.xib */; };
+		8BC98EBE1D4C775100ED6D5F /* SandBoxFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC98EBD1D4C775100ED6D5F /* SandBoxFileManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +37,22 @@
 		8B4D4B761D48513A00AFD689 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B4D4B791D48513A00AFD689 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B4D4B7B1D48513A00AFD689 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B4D4B831D4857E900AFD689 /* IMG_0054.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = IMG_0054.MOV; path = ../../../../../Documents/IMG_0054.MOV; sourceTree = "<group>"; };
+		8B4D4B8A1D489C7300AFD689 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8B4D4BAD1D49B3C400AFD689 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8BC98E961D4AF52400ED6D5F /* LJAVPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJAVPlayerViewController.h; sourceTree = "<group>"; };
+		8BC98E971D4AF52400ED6D5F /* LJAVPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJAVPlayerViewController.m; sourceTree = "<group>"; };
+		8BC98EA81D4C44C800ED6D5F /* FileManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManageViewController.h; sourceTree = "<group>"; };
+		8BC98EA91D4C44C800ED6D5F /* FileManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileManageViewController.m; sourceTree = "<group>"; };
+		8BC98EAA1D4C44C800ED6D5F /* FileManageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileManageViewController.xib; sourceTree = "<group>"; };
+		8BC98EAD1D4C44C800ED6D5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8BC98EB11D4C452900ED6D5F /* FileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileModel.h; sourceTree = "<group>"; };
+		8BC98EB21D4C452900ED6D5F /* FileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileModel.m; sourceTree = "<group>"; };
+		8BC98EB71D4C470900ED6D5F /* FileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileTableViewCell.h; sourceTree = "<group>"; };
+		8BC98EB81D4C470900ED6D5F /* FileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileTableViewCell.m; sourceTree = "<group>"; };
+		8BC98EB91D4C470900ED6D5F /* FileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileTableViewCell.xib; sourceTree = "<group>"; };
+		8BC98EBC1D4C775100ED6D5F /* SandBoxFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SandBoxFileManager.h; sourceTree = "<group>"; };
+		8BC98EBD1D4C775100ED6D5F /* SandBoxFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SandBoxFileManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B4D4B8B1D489C7300AFD689 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +70,7 @@
 		8B4D4B5E1D48513900AFD689 = {
 			isa = PBXGroup;
 			children = (
+				8B4D4B8A1D489C7300AFD689 /* AVFoundation.framework */,
 				8B4D4B691D48513A00AFD689 /* MoviePlayer */,
 				8B4D4B681D48513A00AFD689 /* Products */,
 			);
@@ -58,6 +87,9 @@
 		8B4D4B691D48513A00AFD689 /* MoviePlayer */ = {
 			isa = PBXGroup;
 			children = (
+				8BC98E9F1D4B9C6B00ED6D5F /* LJFileManager */,
+				8B4D4BAC1D49B3C400AFD689 /* LJAVPlayer */,
+				8B4D4B831D4857E900AFD689 /* IMG_0054.MOV */,
 				8B4D4B6D1D48513A00AFD689 /* AppDelegate.h */,
 				8B4D4B6E1D48513A00AFD689 /* AppDelegate.m */,
 				8B4D4B701D48513A00AFD689 /* ViewController.h */,
@@ -77,6 +109,58 @@
 				8B4D4B6B1D48513A00AFD689 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8B4D4BAC1D49B3C400AFD689 /* LJAVPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				8BC98E961D4AF52400ED6D5F /* LJAVPlayerViewController.h */,
+				8BC98E971D4AF52400ED6D5F /* LJAVPlayerViewController.m */,
+				8B4D4BAD1D49B3C400AFD689 /* Assets.xcassets */,
+			);
+			path = LJAVPlayer;
+			sourceTree = "<group>";
+		};
+		8BC98E9F1D4B9C6B00ED6D5F /* LJFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				8BC98EA71D4C44C800ED6D5F /* controller */,
+				8BC98EAB1D4C44C800ED6D5F /* model */,
+				8BC98EAC1D4C44C800ED6D5F /* view */,
+				8BC98EBC1D4C775100ED6D5F /* SandBoxFileManager.h */,
+				8BC98EBD1D4C775100ED6D5F /* SandBoxFileManager.m */,
+			);
+			path = LJFileManager;
+			sourceTree = "<group>";
+		};
+		8BC98EA71D4C44C800ED6D5F /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				8BC98EA81D4C44C800ED6D5F /* FileManageViewController.h */,
+				8BC98EA91D4C44C800ED6D5F /* FileManageViewController.m */,
+				8BC98EAA1D4C44C800ED6D5F /* FileManageViewController.xib */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		8BC98EAB1D4C44C800ED6D5F /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8BC98EB11D4C452900ED6D5F /* FileModel.h */,
+				8BC98EB21D4C452900ED6D5F /* FileModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		8BC98EAC1D4C44C800ED6D5F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				8BC98EAD1D4C44C800ED6D5F /* Assets.xcassets */,
+				8BC98EB71D4C470900ED6D5F /* FileTableViewCell.h */,
+				8BC98EB81D4C470900ED6D5F /* FileTableViewCell.m */,
+				8BC98EB91D4C470900ED6D5F /* FileTableViewCell.xib */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +221,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B4D4B7A1D48513A00AFD689 /* LaunchScreen.storyboard in Resources */,
+				8BC98EBB1D4C470900ED6D5F /* FileTableViewCell.xib in Resources */,
+				8B4D4B841D4857E900AFD689 /* IMG_0054.MOV in Resources */,
+				8BC98EAF1D4C44C800ED6D5F /* FileManageViewController.xib in Resources */,
 				8B4D4B771D48513A00AFD689 /* Assets.xcassets in Resources */,
+				8BC98EB01D4C44C800ED6D5F /* Assets.xcassets in Resources */,
 				8B4D4B751D48513A00AFD689 /* Main.storyboard in Resources */,
+				8B4D4BB11D49B3C400AFD689 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +239,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B4D4B721D48513A00AFD689 /* ViewController.m in Sources */,
+				8BC98EBE1D4C775100ED6D5F /* SandBoxFileManager.m in Sources */,
+				8BC98E981D4AF52400ED6D5F /* LJAVPlayerViewController.m in Sources */,
 				8B4D4B6F1D48513A00AFD689 /* AppDelegate.m in Sources */,
+				8BC98EB31D4C452900ED6D5F /* FileModel.m in Sources */,
+				8BC98EAE1D4C44C800ED6D5F /* FileManageViewController.m in Sources */,
+				8BC98EBA1D4C470900ED6D5F /* FileTableViewCell.m in Sources */,
 				8B4D4B6C1D48513A00AFD689 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +396,7 @@
 				8B4D4B801D48513A00AFD689 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

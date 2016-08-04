@@ -48,12 +48,6 @@
             self.imageRight.hidden = NO;
             self.size.text = [NSString stringWithFormat:@"%llu", model.size];
             break;
-        case TypeSuperDirectory:
-            self.icon.image = [UIImage imageNamed:@"back_folder"];
-            self.size.text = nil;
-            self.date.text = nil;
-            self.name.text = @"返回上一级目录";
-            return;
         case TypeFile:
         default:
             self.icon.image = [UIImage imageNamed:@"ico_file_common"];

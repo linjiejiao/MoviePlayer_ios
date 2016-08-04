@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B1B4D141D50CEC900001C02 /* FilesListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B1B4D131D50CEC900001C02 /* FilesListHeaderView.xib */; };
+		8B1B4D171D50CEDD00001C02 /* FilesListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B4D161D50CEDD00001C02 /* FilesListHeaderView.m */; };
 		8B4D4B6C1D48513A00AFD689 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4D4B6B1D48513A00AFD689 /* main.m */; };
 		8B4D4B6F1D48513A00AFD689 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4D4B6E1D48513A00AFD689 /* AppDelegate.m */; };
 		8B4D4B721D48513A00AFD689 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4D4B711D48513A00AFD689 /* ViewController.m */; };
@@ -24,9 +26,13 @@
 		8BC98EBA1D4C470900ED6D5F /* FileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC98EB81D4C470900ED6D5F /* FileTableViewCell.m */; };
 		8BC98EBB1D4C470900ED6D5F /* FileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BC98EB91D4C470900ED6D5F /* FileTableViewCell.xib */; };
 		8BC98EBE1D4C775100ED6D5F /* SandBoxFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC98EBD1D4C775100ED6D5F /* SandBoxFileManager.m */; };
+		8BC98ECC1D4DDF2000ED6D5F /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BC98ECB1D4DDF2000ED6D5F /* AssetsLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B1B4D131D50CEC900001C02 /* FilesListHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilesListHeaderView.xib; sourceTree = "<group>"; };
+		8B1B4D151D50CEDD00001C02 /* FilesListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilesListHeaderView.h; sourceTree = "<group>"; };
+		8B1B4D161D50CEDD00001C02 /* FilesListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilesListHeaderView.m; sourceTree = "<group>"; };
 		8B4D4B671D48513A00AFD689 /* MoviePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B4D4B6B1D48513A00AFD689 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8B4D4B6D1D48513A00AFD689 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,6 +59,7 @@
 		8BC98EB91D4C470900ED6D5F /* FileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileTableViewCell.xib; sourceTree = "<group>"; };
 		8BC98EBC1D4C775100ED6D5F /* SandBoxFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SandBoxFileManager.h; sourceTree = "<group>"; };
 		8BC98EBD1D4C775100ED6D5F /* SandBoxFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SandBoxFileManager.m; sourceTree = "<group>"; };
+		8BC98ECB1D4DDF2000ED6D5F /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BC98ECC1D4DDF2000ED6D5F /* AssetsLibrary.framework in Frameworks */,
 				8B4D4B8B1D489C7300AFD689 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +78,7 @@
 		8B4D4B5E1D48513900AFD689 = {
 			isa = PBXGroup;
 			children = (
+				8BC98ECB1D4DDF2000ED6D5F /* AssetsLibrary.framework */,
 				8B4D4B8A1D489C7300AFD689 /* AVFoundation.framework */,
 				8B4D4B691D48513A00AFD689 /* MoviePlayer */,
 				8B4D4B681D48513A00AFD689 /* Products */,
@@ -159,6 +168,9 @@
 				8BC98EB71D4C470900ED6D5F /* FileTableViewCell.h */,
 				8BC98EB81D4C470900ED6D5F /* FileTableViewCell.m */,
 				8BC98EB91D4C470900ED6D5F /* FileTableViewCell.xib */,
+				8B1B4D131D50CEC900001C02 /* FilesListHeaderView.xib */,
+				8B1B4D151D50CEDD00001C02 /* FilesListHeaderView.h */,
+				8B1B4D161D50CEDD00001C02 /* FilesListHeaderView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -220,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B1B4D141D50CEC900001C02 /* FilesListHeaderView.xib in Resources */,
 				8B4D4B7A1D48513A00AFD689 /* LaunchScreen.storyboard in Resources */,
 				8BC98EBB1D4C470900ED6D5F /* FileTableViewCell.xib in Resources */,
 				8B4D4B841D4857E900AFD689 /* IMG_0054.MOV in Resources */,
@@ -240,6 +253,7 @@
 			files = (
 				8B4D4B721D48513A00AFD689 /* ViewController.m in Sources */,
 				8BC98EBE1D4C775100ED6D5F /* SandBoxFileManager.m in Sources */,
+				8B1B4D171D50CEDD00001C02 /* FilesListHeaderView.m in Sources */,
 				8BC98E981D4AF52400ED6D5F /* LJAVPlayerViewController.m in Sources */,
 				8B4D4B6F1D48513A00AFD689 /* AppDelegate.m in Sources */,
 				8BC98EB31D4C452900ED6D5F /* FileModel.m in Sources */,

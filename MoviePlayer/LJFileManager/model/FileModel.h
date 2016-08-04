@@ -11,7 +11,6 @@
 typedef NS_ENUM(NSUInteger, FileModelType) {
     TypeFile,
     TypeDirectory,
-    TypeSuperDirectory,
 };
 
 @interface FileModel : NSObject

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FilesListHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="110"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="headTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJr-bu-BSn">
+                    <rect key="frame" x="15" y="0.0" width="570" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Fsv-UJ-3Ag"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="AJr-bu-BSn" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1P0-ED-fBk"/>
+                <constraint firstItem="AJr-bu-BSn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="YYu-ra-16G"/>
+                <constraint firstItem="AJr-bu-BSn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="l85-4L-YS8"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="pathLabel" destination="AJr-bu-BSn" id="qKl-wF-zz1"/>
+            </connections>
+        </view>
+        <view contentMode="scaleToFill" id="9Pb-W2-7OX">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ubs-4r-fw6">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="0.5"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_folder" translatesAutoresizingMaskIntoConstraints="NO" id="6a2-5n-vNR">
+                    <rect key="frame" x="15" y="10" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="H1B-0V-KDQ"/>
+                        <constraint firstAttribute="height" constant="50" id="cWA-nb-ROl"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="返回上一级目录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cki-24-vt6">
+                    <rect key="frame" x="70" y="10" width="530" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="aes-ds-grf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="6a2-5n-vNR" firstAttribute="top" secondItem="cki-24-vt6" secondAttribute="top" id="03e-Lr-Fp9"/>
+                <constraint firstItem="Ubs-4r-fw6" firstAttribute="trailing" secondItem="cki-24-vt6" secondAttribute="trailing" id="0Bd-kQ-Dou" userLabel="View.centerX = centerX"/>
+                <constraint firstItem="Ubs-4r-fw6" firstAttribute="leading" secondItem="9Pb-W2-7OX" secondAttribute="leading" id="0RN-o1-Ubf"/>
+                <constraint firstItem="Ubs-4r-fw6" firstAttribute="top" secondItem="9Pb-W2-7OX" secondAttribute="top" id="6LO-Sk-tVi"/>
+                <constraint firstItem="cki-24-vt6" firstAttribute="leading" secondItem="6a2-5n-vNR" secondAttribute="trailing" constant="5" id="E5e-gT-YRM"/>
+                <constraint firstItem="6a2-5n-vNR" firstAttribute="bottom" secondItem="cki-24-vt6" secondAttribute="bottom" id="JWU-OD-hWd"/>
+                <constraint firstItem="6a2-5n-vNR" firstAttribute="leading" secondItem="9Pb-W2-7OX" secondAttribute="leading" constant="15" id="NDB-ZJ-fEd"/>
+                <constraint firstItem="6a2-5n-vNR" firstAttribute="centerY" secondItem="9Pb-W2-7OX" secondAttribute="centerY" id="Z9J-bo-qXg"/>
+                <constraint firstAttribute="trailing" secondItem="Ubs-4r-fw6" secondAttribute="trailing" id="nEI-o7-Kf9"/>
+                <constraint firstItem="6a2-5n-vNR" firstAttribute="top" secondItem="Ubs-4r-fw6" secondAttribute="bottom" constant="9" id="vc9-Ls-yZg" userLabel="back_folder.top = top + 10"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="248" y="486"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back_folder" width="50" height="50"/>
+    </resources>
+</document>

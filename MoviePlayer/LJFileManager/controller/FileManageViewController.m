@@ -10,9 +10,9 @@
 #import "FileTableViewCell.h"
 #import "FileModel.h"
 #import "SandBoxFileManager.h"
+#import "FilesListHeaderView.h"
 
-#define MARGIN_HORIZON  15
-#define HEADER_HEIGHT   40
+#define MARGIN_HORIZON      15
 
 @interface FileManageViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UINavigationItem *titleItem;
@@ -20,10 +20,25 @@
 @property (strong, nonatomic) NSMutableArray<FileModel*> *fileList;
 @property (copy, nonatomic) NSString *currentPath;
 @property (strong, nonatomic) UILabel *currentPathLabel;
+@property (weak, nonatomic) IBOutlet UIToolbar *bottomToolBar;
+@property (strong, nonatomic) FilesListHeaderView *header;
+
+@property (strong, nonatomic) NSMutableArray<FileModel *> *selectedFiles;
 
 @end
 
 @implementation FileManageViewController
+
+- (IBAction)onEditClicked:(UIBarButtonItem *)sender {
+    self.bottomToolBar.hidden = !self.bottomToolBar.hidden;
+    if(self.bottomToolBar.hidden){
+        self.tableView.editing = NO;
+        [self.selectedFiles removeAllObjects];
+    }else{
+        self.tableView.editing = YES;
+    }
+    [self.tableView reloadData];
+}
 
 - (IBAction)onBackClicked:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:^{
@@ -41,13 +56,38 @@
     }];
 }
 
+- (IBAction)onRenameClicked:(UIBarButtonItem *)sender {
+}
+
+- (IBAction)onDeleteClicked:(UIBarButtonItem *)sender {
+    @synchronized (self.selectedFiles) {
+        for(FileModel *model in self.selectedFiles){
+            [self deleteFile:model];
+        }
+        [self.selectedFiles removeAllObjects];
+        [self refreshList];
+    }
+}
+
+- (IBAction)onMoreClicked:(UIBarButtonItem *)sender {
+}
+
+- (void)onBackFolder {
+    self.currentPath = [self.currentPath stringByDeletingLastPathComponent];
+}
+
 #pragma  mark - override
 - (instancetype)init {
     self = [super initWithNibName:@"FileManageViewController" bundle:nil];
     if(self){
         self.fileList = [NSMutableArray new];
+        self.selectedFiles = [NSMutableArray new];
     }
     return self;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
 }
 
 - (void)viewDidLoad {
@@ -87,59 +127,81 @@
     FileTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[FileTableViewCell cellId]];
     FileModel *model = [self.fileList objectAtIndex:indexPath.row];
     cell.selectMode = tableView.editing;
+    cell.selected = [self.selectedFiles containsObject:model];
     [cell setModel:model];
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     FileModel *model = [self.fileList objectAtIndex:indexPath.row];
-    switch(model.type) {
-        case TypeSuperDirectory:
-        case TypeDirectory: {
-            self.currentPath = model.path;
-        }break;
-        case TypeFile: {
-            [self dissmissWithSelectedFile:model];
-        }break;
-        default:
-            NSLog(@"unknown model:%@", model);
-            break;
+    if(!tableView.editing){
+        switch(model.type) {
+            case TypeDirectory: {
+                self.currentPath = model.path;
+            }break;
+            case TypeFile: {
+                [self dissmissWithSelectedFile:model];
+            }break;
+            default:
+                NSLog(@"unknown model:%@", model);
+                break;
+        }
+    }else{
+        @synchronized (self.selectedFiles) {
+            [self.selectedFiles addObject:model];
+        }
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    FileModel *model = [self.fileList objectAtIndex:indexPath.row];
+    if(!tableView.editing){
+    }else{
+        @synchronized (self.selectedFiles) {
+            [self.selectedFiles removeObject:model];
+        }
     }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *header = [[UIView alloc]init];
-    CGFloat screenWidth = [[UIScreen mainScreen]bounds].size.width;
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(MARGIN_HORIZON, 5, screenWidth - 2*MARGIN_HORIZON, HEADER_HEIGHT - 10)];
-    label.numberOfLines = 2;
-    label.font = [UIFont systemFontOfSize:12];
-    label.lineBreakMode = NSLineBreakByTruncatingHead;
-    label.text = self.currentPath;
-    self.currentPathLabel = label;
-    [header addSubview:label];
-    return header;
+    if(!self.header){
+        self.header = [FilesListHeaderView newView];
+        self.currentPathLabel = self.header.pathLabel;
+        self.currentPathLabel.text = [self getSimplifyPath:self.currentPath];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onBackFolder)];
+        [self.header.backFolderView addGestureRecognizer:tap];
+    }else{
+        [self.header removeFromSuperview];
+    }
+    [self.header setBackFolderViewVisible:!([self isHomeRoot] || tableView.isEditing)];
+    return self.header;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return HEADER_HEIGHT;
+    if([self isHomeRoot] || tableView.editing){
+        return CURRENT_PATH_HEIGHT;
+    }else{
+        return CURRENT_PATH_HEIGHT + BACK_PATH_HEIGHT;
+    }
+}
+
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert;
+}
+
+-(void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    [super setEditing:editing animated:animated];
+    [self.tableView setEditing:editing animated:animated];
 }
 
 #pragma mark - other methods
 
 - (void)setCurrentPath:(NSString *)currentPath {
     if(self.currentPathLabel) {
-        self.currentPathLabel.text = currentPath;
+        self.currentPathLabel.text = [self getSimplifyPath:currentPath];
     }
     _currentPath = currentPath;
-    [self.fileList removeAllObjects];
-    if(![self isHomeRoot]){
-        FileModel *model = [FileModel new];
-        model.type = TypeSuperDirectory;
-        model.path = [self.currentPath stringByDeletingLastPathComponent];
-        [self.fileList addObject:model];
-    }
-    [self.fileList addObjectsFromArray:[self getData]];
-    [self.tableView reloadData];
+    [self refreshList];
 }
 
 - (NSArray *)getData {
@@ -161,6 +223,25 @@
 
 - (BOOL)isHomeRoot {
     return [NSHomeDirectory() isEqualToString:self.currentPath];
+}
+
+- (NSString *)getSimplifyPath:(NSString *)fullPath {
+    NSString *simplify = [fullPath stringByReplacingOccurrencesOfString:NSHomeDirectory() withString:@"HOME"];
+    return simplify;
+}
+
+- (void)deleteFile:(FileModel *)file {
+    NSError *error;
+    [[NSFileManager defaultManager] removeItemAtPath:file.path error:&error];
+    if(error) {
+        NSLog(@"deleteFile:%@ got error:%@", file, error);
+    }
+}
+
+- (void)refreshList {
+    [self.fileList removeAllObjects];
+    [self.fileList addObjectsFromArray:[self getData]];
+    [self.tableView reloadData];
 }
 
 @end

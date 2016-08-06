@@ -23,12 +23,19 @@ static SandBoxFileManager *_instance;
 - (NSArray *)getFilesUnderPath:(NSString *)path {
     NSFileManager *fm = [NSFileManager defaultManager];
     NSArray *filesArray = [fm contentsOfDirectoryAtPath:path error:NULL];
+    NSMutableArray *folderModels = [[NSMutableArray alloc]initWithCapacity:filesArray.count];
     NSMutableArray *fileModels = [[NSMutableArray alloc]initWithCapacity:filesArray.count];
     for(NSString * fileName in filesArray){
         NSString *fullPath = [path stringByAppendingFormat:@"/%@", fileName];
-        [fileModels addObject:[self createModelFromPath:fullPath]];
+        FileModel *model = [self createModelFromPath:fullPath];
+        if(model.type == TypeDirectory){
+            [folderModels addObject:model];
+        }else{
+            [fileModels addObject:model];
+        }
     }
-    return fileModels;
+    [folderModels addObjectsFromArray:fileModels];
+    return folderModels;
 }
 
 - (FileModel *)createModelFromPath:(NSString *)path {
@@ -39,4 +46,5 @@ static SandBoxFileManager *_instance;
     [model fillWithDictionary:attrs];
     return model;
 }
+
 @end

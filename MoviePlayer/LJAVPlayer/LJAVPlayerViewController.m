@@ -107,7 +107,7 @@
     [self.view addSubview:self.titleBar];
     // back button
     self.backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.backButton setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    [self.backButton setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
     [self.backButton addTarget:self action:@selector(backBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     [self.titleBar addSubview:self.backButton];
     // title lable
@@ -117,8 +117,8 @@
     [self.titleBar addSubview:self.titleLable];
     //  play button
     self.playButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.playButton setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
-    [self.playButton setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateSelected];
+    [self.playButton setImage:[UIImage imageNamed:@"play.png"] forState:UIControlStateNormal];
+    [self.playButton setImage:[UIImage imageNamed:@"pause.png"] forState:UIControlStateSelected];
     self.playButton.center = self.view.center;
     [self.playButton addTarget:self action:@selector(playBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.playButton];
@@ -137,7 +137,7 @@
     // play progress
     self.playProgress =[[UISlider alloc] init];
     self.playProgress.maximumTrackTintColor = [UIColor clearColor];
-    UIImage *slideIndecator = [UIImage imageNamed:@"slide_indecator"];
+    UIImage *slideIndecator = [UIImage imageNamed:@"slide_indecator.png"];
     [self.playProgress setThumbImage:slideIndecator forState:UIControlStateNormal];
     [self.playProgress setThumbImage:slideIndecator forState:UIControlStateSelected];
     [self.playProgress addTarget:self action:@selector(onSlider:event:) forControlEvents:UIControlEventValueChanged];
